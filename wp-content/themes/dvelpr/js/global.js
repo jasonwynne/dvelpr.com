@@ -54,7 +54,7 @@ function homePageActions(){
 	$(".block-extended").click(function() {
 		var mySpot = $(this).children('p').children('a.project-title-link');
 		var myLink = mySpot.attr('href');
-		//console.debug('mylinkk is = '+myLink);
+		console.debug('mylinkk is = '+myLink);
 		window.open(myLink,'_self');
 	});
 	
