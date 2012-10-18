@@ -1,0 +1,9 @@
+
+/*******************************************************************************************************  start out for all divs  */ 
+.wrapper {
+	min-width: 960px !important;
+}
+.center {
+	width: 960px !important;
+}
+

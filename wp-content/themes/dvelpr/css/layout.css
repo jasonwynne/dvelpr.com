@@ -1,0 +1,574 @@
+/***************************************
+
+	Client: dvelpr.com	
+	Date Started: 7/1/2012
+	Author: Jason Wynne
+	
+	Colors ------------
+		color: #404042;  main font	
+
+	Font --------------
+		font-family: 'ColaborateThinRegular', Arial, Helvetica, sans-serif;
+		font-family: 'ColaborateLightRegular', Arial, Helvetica, sans-serif;
+		font-family: 'ColaborateRegular', Arial, Helvetica, sans-serif;
+		font-family: 'ColaborateMediumRegular', Arial, Helvetica, sans-serif;
+		font-family: 'ColaborateBoldRegular', Arial, Helvetica, sans-serif;
+		font-family: Arial, Helvetica, sans-serif;
+
+****************************************/
+
+/*******************************************************************************************************  start out for all divs  */ 
+html{ font-size:16px; } /* Make sure the default is always 16px */
+
+body {
+	background:#E9E9E9 url('../images/background.jpg') no-repeat center top;
+	color: #404042;
+	font-size:62.5%; /* 16px * 62.5% = 10px : 1em now = 10px */
+	font-family: 'ColaborateRegular', Arial, Helvetica, sans-serif;
+}
+
+
+.wrapper {
+	clear: both;
+	float: left;
+	width: 100%;
+	z-index: 50;
+}
+
+.center {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 960px;
+}
+
+a{
+	text-decoration: none;
+	outline: none;	
+}
+
+/*******************************************************************************************************  header  */ 
+
+.holder-icon{
+	padding: 0 0 0 15px;
+}
+
+.holder-icon img{
+	height: 50px;
+	width: 50px;
+}
+
+/*******************************************************************************************************  footer  */ 
+
+.holder-footer {
+	z-index: 500;
+	margin:25px 0;
+	background: #404042;
+	height: 25px;
+	display: block;
+}
+
+/*******************************************************************************************************  Home Page  */ 
+
+
+.holder-me {
+	background:transparent url('../images/bracket06.png') 250px 0 no-repeat;
+	float: left;
+	width: 300px;
+	min-height: 460px;
+}
+
+.holder-me h1{
+	padding: 145px 65px 0 0;
+	text-align: right;
+	font: 3.5em/1.3em 'ColaborateLightRegular',Helvetica,arial,san-serif;
+    letter-spacing: -2px;
+}
+
+.holder-me h5 {
+	font: 1.7em/1.1em 'ColaborateThinRegular',Helvetica,arial,san-serif;
+	padding: 0 65px 0 0;
+	text-align: right;
+}
+
+.holder-me ul {
+	padding: 20px 65px 0 0;
+}
+
+.holder-me ul li{
+	text-align: right;	
+	padding: 3px 0;
+}
+
+.holder-me ul li a{
+	font-size: 1.2em;
+	color: #404042;	
+	font-family: 'ColaborateMediumRegular', Arial, Helvetica, sans-serif;
+	text-transform: capitalize;
+}
+
+.holder-me ul li a:hover{
+	color: #7b7b7b;
+}
+
+.holder-me ul li.current-menu-item a, .holder-me ul li.current-cat a{
+	color: #7b7b7b;
+	cursor: default;
+}
+
+.holder-blocks {
+	width: 660px;
+	float: left;
+	margin: 0 0 25px;
+}
+
+.block {
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin: 5px;
+	display: block;
+	background: #fff;
+	cursor: pointer;
+	-webkit-box-shadow:  2px 2px 5px 0px rgba(00, 00, 00, .5);
+    box-shadow:  2px 2px 5px 0px rgba(00, 00, 00, .5);
+}
+
+.block-thumb{
+	background-color: transparent;
+	width: 100px;
+	height: 100px;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.block-covered {
+	-webkit-box-shadow:  none;
+    box-shadow:  none;
+    cursor: default;
+}
+
+.block:hover {
+	-webkit-box-shadow:  none;
+    box-shadow:  none;
+}
+
+.block-thumb:hover {
+	background-position: 0px -100px;
+}
+
+.block-extended {
+	position: absolute;
+	width: 280px;
+	height: 150px;
+	display: none;
+	background: #fff;
+	z-index: 500;
+	-webkit-box-shadow:  2px 2px 5px 0px rgba(00, 00, 00, .5);
+    box-shadow:  2px 2px 5px 0px rgba(00, 00, 00, .5);
+    margin: -25px 0 0 -90px;
+    cursor: pointer;
+}
+
+
+
+.myPos{
+	color: #fff;
+	font-size: 12px;
+}
+
+
+.title-link a {
+	font-size: 14px;
+	color: #404042;
+	width: 280px;
+	text-align: center;
+	display: block;
+	font-family: 'ColaborateMediumRegular', Arial, Helvetica, sans-serif;
+	line-height: 25px;
+}
+
+.title-link a:hover {
+	color: #7b7b7b;
+}
+
+.title-link a.project-title-hover {
+	display: none;
+}
+
+/*******************************************************************************************************  Project Pages */
+
+.slide-holder{
+	margin: 2px 0 10px;
+	width: 660px;
+	height: 370px;
+	display: block;
+	overflow: hidden;
+}
+
+.slide-holder .slide{
+	position: absolute;
+	width: 100%;
+	-webkit-box-shadow:  2px 2px 5px 0px rgba(00, 00, 00, .5);
+    box-shadow:  2px 2px 5px 0px rgba(00, 00, 00, .5);
+}
+
+.thumb-holder{
+	margin: 0 0 10px;
+	width: 100%;
+}
+
+.thumb{
+	padding: 5px;
+	float: left;
+	cursor: pointer;
+}
+
+.thumb-cover{
+	width: 106px;
+	height: 64px;
+	position: absolute;
+	z-index: 100;
+	
+}
+
+.thumb.current-thumb{
+	opacity: 1;
+}
+
+.holder-blocks h3{
+	padding-top: 2px;
+}
+
+.holder-blocks h3 a{
+	color: #db5d00;
+}
+
+.holder-blocks h3 a:hover{
+	color: #fea923;
+}
+
+.holder-project p{
+	padding: 7px 0;
+}
+
+ul.pag-holder{
+	width: 100%;
+	padding: 10px 0 20px;
+}
+
+ul.pag-holder li{
+	float: left;
+	width: 33%;
+	display: block;
+	visibility: visible;
+	
+}
+
+ul.pag-holder li a{
+	color: #db5d00;
+	font-size: 1.2em;
+}
+
+ul.pag-holder li a:hover{
+	color:#fea923;
+}
+
+ul.pag-holder li.btn-back{
+	text-align: center;
+}
+
+ul.pag-holder li.next{
+	text-align: right;
+}
+
+.cat-cloud{
+	text-align: right;
+	padding: 25px 65px 0 0;
+}
+
+
+/*******************************************************************************************************  Contact Form */
+
+h2.contact-head {
+	margin-top: 25px;
+}
+
+.form-contact {
+	margin: 10px 0 25px;
+	width: 330px;
+}
+
+.form-contact input {
+	width: 300px;
+	margin: 2px 0;
+	padding: 3px 5px;
+	border: 1px solid #404042;
+}
+
+.form-contact textarea {
+	width: 300px;
+	max-width: 300px;
+	min-width: 300px;
+	margin: 2px 0;
+	padding: 3px 5px;
+	border: 1px solid #404042;
+	font-family: 'ColaborateRegular', Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+input.btn-send {
+	width: 75px;
+	background: #999;
+	color:#fff;
+	border: none;
+	font-family: 'ColaborateRegular', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+    -webkit-box-shadow:  1px 1px 2px 0px rgba(00, 00, 00, .7);
+    box-shadow:  1px 1px 2px 0px rgba(00, 00, 00, .7);
+}
+
+input.btn-send:hover {
+	-webkit-box-shadow: none;
+    box-shadow: none;
+    background: #666;
+}
+.wpcf7-response-output{
+	display: none !important;
+}
+
+.project-title-hover {
+	display: none;
+}
+
+/******************************************************************************************************* Catagory Page */
+
+.holder-cat {
+
+}
+
+.holder-cat h3 {
+	color: #fff;
+	font-size: 2.3em;
+	padding-bottom: 15px;
+}
+
+.single-holder {
+	padding: 10px 0;
+}
+
+.single-image {
+	height: 100px;
+	width:100px;
+	overflow: hidden;
+	float: left;
+	padding: 0 20px 0 0;
+}
+
+.single-copy {
+	float: left;
+	width:500px;
+}
+
+
+/*******************************************************************************************************  Media Quieries */
+
+ @media screen and (max-width: 970px){
+	body {
+		background:#E9E9E9 url('../images/background.jpg') no-repeat center -70px;
+	}
+	
+	.holder-icon{
+		width: 660px;
+		margin: 0 auto;
+		padding: 0;
+	}
+	
+	.holder-icon a{
+		float: right;
+		padding-right: 5px;
+	}
+	
+	.holder-me {
+		float: none;
+		width: 660px;
+		min-height: 25px;
+		padding-bottom: 45px;
+		margin: -37px auto 0;
+		background:transparent url('../images/bracket-top-6.png') 0 bottom no-repeat;
+	}
+	
+	.holder-blocks {
+		width: 660px;
+		float: none;
+		margin: 0 auto 25px;
+	}
+	
+	.me-left{
+		width: 205px;
+		float: left;
+	}
+	
+	.holder-me h1{
+		padding: 0;
+		text-align: right;
+		font: 3.5em/1.3em 'ColaborateLightRegular',Helvetica,arial,san-serif;
+		letter-spacing: -2px;
+	}
+	.holder-me h5 {
+		font: 1.7em/1.15em 'ColaborateThinRegular',Helvetica,arial,san-serif;
+		padding: 0;
+		text-align: right;
+	}
+	
+	.holder-me ul {
+		padding: 13px 0 0 30px;
+		float: left;
+	}
+	
+	.holder-me ul li{
+		text-align: left;	
+		padding: 3px 0;
+	}
+	
+	
+	.slide-holder{
+		margin: 10px 0;
+	}
+	
+	ul.cat-list{
+		display: none;
+	}
+	
+	.form-contact input {
+		width: 284px;
+	}
+	
+	.form-contact textarea {
+		width: 284px;
+		max-width: 284px;
+		min-width: 284px;
+
+	}
+	
+	.form-contact input.btn-send {
+		width: 295px;
+	}
+	
+	
+	
+ } /****************** end of 930 ***********************/
+ 
+@media screen and (max-width: 665px){
+  
+  	.holder-icon{
+		width: 550px;
+	}
+  
+  	.holder-blocks {
+		width: 550px;
+	}
+	.holder-me {
+		width: 550px;
+		background:transparent url('../images/bracket-top-5.png') 0 bottom no-repeat;
+	}
+	
+	.slide-holder{
+		width: 550px;
+		height: 308px;
+	}
+  
+} /****************** end of 665 ***********************/
+
+@media screen and (max-width: 555px){
+  
+  	.holder-icon{
+		width: 440px;
+	}
+  
+  	.holder-blocks {
+		width: 440px;
+	}
+	.holder-me {
+		width: 440px;
+		background:transparent url('../images/bracket-top-4.png') 0 bottom no-repeat;
+	}
+	
+	.slide-holder{
+		width: 440px;
+		height: 247px;
+	}
+  
+} /****************** end of 555 ***********************/
+
+@media screen and (max-width: 445px){
+  
+  	.holder-icon{
+		width: 310px;
+	}
+	
+	.holder-me ul {
+		padding: 13px 0 0 20px;
+		float: left;
+	}
+  
+  	.holder-blocks {
+		width: 320px;
+		padding: 0px;
+	}
+	
+	.holder-blocks h2,
+	.holder-blocks h3 {
+		padding: 0px 7px;
+	}
+	
+	.holder-blocks p {
+		padding: 7px;
+	}
+	
+	ul.pag-holder {
+		width: 306px;
+		padding: 0px 7px;
+	}
+	
+	
+	.block {
+		margin: 2px;
+	-webkit-box-shadow:  0px 0px 5px 0px rgba(00, 00, 00, .5);
+    box-shadow:  0px 0px 5px 0px rgba(00, 00, 00, .5);
+	}
+	
+	.holder-me {
+		width: 320px;
+		margin: 0 auto;
+		background:transparent url('../images/bracket-top-3.png') 0 bottom no-repeat;
+	}
+	
+	.slide-holder{
+		width: 320px;
+		height: 179px;
+	}
+	
+	
+	.form-contact p{
+		text-align: left;
+		padding: 0 7px;
+		margin: 0;
+	}
+	
+	
+	
+	.form-contact textarea {
+		width: 90%;
+		max-width: 90%;
+		min-width: 90%;
+
+	}
+	
+	.title-link a {
+		line-height: 14px;
+		margin-top: -2px;
+	}
+
+  
+} /****************** end of 445 ***********************/

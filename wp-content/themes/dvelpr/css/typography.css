@@ -1,0 +1,41 @@
+p {
+	font-size: 1.4em;
+	line-height: 1.4em;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1 {
+	font: 3.5em/1em 'ColaborateLightRegular',Helvetica,arial,san-serif;
+}
+
+h2 {
+	font: 2.8em/1em 'ColaborateLightRegular',Helvetica,arial,san-serif;
+}
+
+h3 {
+	font-size: 1.3em;
+	font-family: 'ColaborateMediumRegular', Arial, Helvetica, sans-serif;
+}
+
+h4 {
+	font: 2em/1em 'ColaborateLightRegular',Helvetica,arial,san-serif;
+}
+
+
+a {
+	color: #db5d00;
+}
+
+a:hover{
+	color:#fea923;
+}
+
+b,
+strong {  
+	font-family: 'ColaborateBoldRegular', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+
+}
