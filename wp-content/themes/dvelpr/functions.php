@@ -26,7 +26,7 @@ function get_page_id($page_name){
 function my_init_method() {
   if (is_admin() == false ):
     wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js');
+    wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
     wp_enqueue_script( 'jquery' );
   endif;
 }    
@@ -39,6 +39,20 @@ function add_first_and_last($output) {
   return $output;
 }
 add_filter('wp_nav_menu', 'add_first_and_last');
+
+
+
+// start a session and store the user role as a session variable
+function get_user_role () {
+    global $current_user, $wpdb;
+    $role = $wpdb->prefix . 'capabilities';
+    $current_user->role = array_keys($current_user->$role);
+    $ncaps = count($current_user->role);
+    $role = $current_user->role[$ncaps - 1];
+  
+    return $role;
+}
+
 
 /*************************************************
  * Hide the WP-Admin from Non Admins

@@ -2,7 +2,13 @@
  /* Template Name:Home Page*/
 ?>
 
-<?php get_header(); ?>
+<?php 
+
+	get_header(); 
+	
+
+	
+?>
 
 <div id="page-home">
 	<div class="holder-me">
@@ -10,7 +16,8 @@
 			<h1>Jason J Wynne</h1>
 			<h5>Web Developer / Designer<br />Minneapolis, MN</h5>
 		</div>
-		<?php  wp_nav_menu( array( 'menu' => 'main_menu' ) );?>
+			<?php wp_nav_menu( array( 'menu' => 'main_menu' ) );?>
+				
 		<div class="clear"></div>
 	</div>	
 	<div class="holder-blocks clearfix">
@@ -33,12 +40,12 @@
 			?>
 
 				<div class="block">
-					<div class="block-extended">
+					<div class="block-extended" data-link="<?php the_permalink(); ?>">
 						<img src="<?php the_field('home_square_extended'); ?>" alt="<?php the_field('home_square_title'); ?>"/>
-						<p class="title-link">	
-							<a class="project-title-link" href="<?php the_permalink(); ?>" ><?php the_field('home_square_title'); ?></a>
-							<a class="project-title-hover" href="<?php the_permalink(); ?>" ><?php the_field('home_square_hover'); ?> &rarr;</a>
-						</p>
+						<div class="title-link">	
+							<a class="project-title-link" ><?php the_field('home_square_title'); ?></a>
+						<!-- 	<a class="project-title-hover"><?php the_field('home_square_hover'); ?> &rarr;</a> -->
+						</div>
 					</div>
 					<div class="block-thumb" style="background-image:url('<?php echo $theHomeSprite ?>'); background-color: transparent;"></div>
 				</div>

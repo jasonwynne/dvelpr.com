@@ -9,56 +9,69 @@ $(document).ready(function(){
 
 function homePageActions(){
 
-	$(".block").click(function() {
+	var currentItem;
+	
+	$(".block").each(function(i) {
+		$(this).children('.block-extended').addClass('ext'+i);
+		$(this).children('.block-thumb').addClass('thumb'+i);
+		$(this).addClass('block'+i);
+	});
+
+	$(".block-thumb").click(function() {
+		
+		currentItem = $(this).attr('class');
+		currentItem = parseInt(currentItem.substring(17));
+		console.debug(currentItem);
+		
 		var overWidth = $('.holder-blocks').width();
 		var overheight = $('.holder-blocks').height();
 		var myCalWidth = overWidth-125;
 		var myCalHeight = overheight-125;
-		var p = $(this);
+		var p = $('.block'+currentItem);
 		var position = p.position();
 		var myPosLeft = position.left;
 		var myPosTop = position.top;
 		
-		$(this).children('.block-extended').css('margin','-25px 0 0 -90px');	
+		$('.ext'+currentItem).css('margin','-25px 0 0 -90px');	
 	
 		
 		if(myPosLeft<100){
-			$(this).children('.block-extended').css('margin-left','-10px');	
+			$('.ext'+currentItem).css('margin-left','-10px');	
 		}
 		if(myPosTop<100){
-			$(this).children('.block-extended').css('margin-top','-10px');	
+			$('.ext'+currentItem).css('margin-top','-10px');	
 		}
 		if(myPosLeft>myCalWidth){
-			$(this).children('.block-extended').css('margin-left','-170px');	
+			$('.ext'+currentItem).css('margin-left','-170px');	
 		}
 		if(myPosTop>myCalHeight){
-			$(this).children('.block-extended').css('margin-top','-40px');
+			$('.ext'+currentItem).css('margin-top','-40px');
 		}
-	
-		$(this).children('.block-extended').show(200);
-		$(".block").addClass('block-covered');
+		
+		$('.block-extended').hide(50);
+		openExt(currentItem);
 		
 	});
 	
-	
-	$('.block-extended').hover(
-	  function () {
-		//do nothing
-	  },
-	  function () {
-		$(".block").removeClass('block-covered');
-		$(this).hide(150);
-	  }
-	);
-	
-	$(".block-extended").click(function() {
-		var mySpot = $(this).children('p').children('a.project-title-link');
-		var myLink = mySpot.attr('href');
+
+	$(".block-extended").click(function(e) {
+		e.preventDefault();
+		var myLink = $(this).attr('data-link');
 		console.debug('mylinkk is = '+myLink);
 		window.open(myLink,'_self');
 	});
 	
 	
+	function openExt(x) {
+			$('.ext'+currentItem).show(75, function(){
+				$('.ext'+currentItem).mouseout(function(){
+					$(this).hide(50);
+				});
+			});
+			
+	}
+
+/* 
 	$('.title-link').hover(
 	  function () {
 		$('.project-title-link').css('display', 'none');
@@ -70,6 +83,8 @@ function homePageActions(){
 	  }
 	);
 
+
+ */
 
 
 
