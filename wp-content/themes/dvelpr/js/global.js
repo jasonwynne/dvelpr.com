@@ -6,91 +6,6 @@ $(document).ready(function(){
 });//// end doc ready
 
 
-
-function homePageActions(){
-
-	var currentItem;
-	
-	$(".block").each(function(i) {
-		$(this).children('.block-extended').addClass('ext'+i);
-		$(this).children('.block-thumb').addClass('thumb'+i);
-		$(this).addClass('block'+i);
-	});
-
-	$(".block-thumb").click(function() {
-		
-		currentItem = $(this).attr('class');
-		currentItem = parseInt(currentItem.substring(17));
-		console.debug(currentItem);
-		
-		var overWidth = $('.holder-blocks').width();
-		var overheight = $('.holder-blocks').height();
-		var myCalWidth = overWidth-125;
-		var myCalHeight = overheight-125;
-		var p = $('.block'+currentItem);
-		var position = p.position();
-		var myPosLeft = position.left;
-		var myPosTop = position.top;
-		
-		$('.ext'+currentItem).css('margin','-25px 0 0 -90px');	
-	
-		
-		if(myPosLeft<100){
-			$('.ext'+currentItem).css('margin-left','-10px');	
-		}
-		if(myPosTop<100){
-			$('.ext'+currentItem).css('margin-top','-10px');	
-		}
-		if(myPosLeft>myCalWidth){
-			$('.ext'+currentItem).css('margin-left','-170px');	
-		}
-		if(myPosTop>myCalHeight){
-			$('.ext'+currentItem).css('margin-top','-40px');
-		}
-		
-		$('.block-extended').hide(50);
-		openExt(currentItem);
-		
-	});
-	
-
-	$(".block-extended").click(function(e) {
-		e.preventDefault();
-		var myLink = $(this).attr('data-link');
-		console.debug('mylinkk is = '+myLink);
-		window.open(myLink,'_self');
-	});
-	
-	
-	function openExt(x) {
-			$('.ext'+currentItem).show(75, function(){
-				$('.ext'+currentItem).mouseout(function(){
-					$(this).hide(50);
-				});
-			});
-			
-	}
-
-/* 
-	$('.title-link').hover(
-	  function () {
-		$('.project-title-link').css('display', 'none');
-		$('.project-title-hover').css('display', 'block');
-	  },
-	  function () {
-		$('.project-title-link').css('display', 'block');
-		$('.project-title-hover').css('display', 'none');
-	  }
-	);
-
-
- */
-
-
-
-
-}//// projectPageActions
-
 function projectPageActions(){
 
 	var count = $(".slide").length;
@@ -128,7 +43,6 @@ function projectPageActions(){
 		var myPosTop = position.top;
 		var thumbNum = $(this).attr('class');
 		var parsed = parseInt(thumbNum.substring(11));
-		//console.debug(parsed);
 		moveSlide(parsed);
 		moveCover(myPosLeft,myPosTop);
 	});
@@ -149,7 +63,6 @@ function projectPageActions(){
 	}
 	
 	$(document).keydown(function(e) {
- 		//console.debug(e.type + ': ' +  e.which)
  		if(e.which==39){
  			if(currSlide != totalCount){
  				i=currSlide+1;

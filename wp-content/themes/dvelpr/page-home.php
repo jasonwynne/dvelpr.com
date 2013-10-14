@@ -1,8 +1,6 @@
 <?php
  /* Template Name:Home Page*/
-?>
 
-<?php 
 
 	get_header(); 
 	
@@ -21,33 +19,14 @@
 		<div class="clear"></div>
 	</div>	
 	<div class="holder-blocks clearfix">
-<!-- 
-		<div class="block">
-			<div class="block-extended">
-				<img src="<?php bloginfo('template_directory'); ?>/images/homeimage0-extended.jpg" alt="Visti"/>
-				<p><a class="project-title-link" href="http://localhost/dvelpr/30cod/ ">thirtyconversationsondesign.com</a></p>
-			</div>
-			<div class="block-thumb" style="background-image:url('<?php bloginfo('template_directory'); ?>/images/homeimage0.jpg');"></div>
-		</div>
- -->
- 
  			<?php
 				$custom_query = new WP_Query( array('post_type' => 'post','showposts' => -1 ) );
 				while($custom_query->have_posts()) : $custom_query->the_post();
-				
 				$theHomeSprite = get_field('home_square_sprite');
-				
 			?>
 
 				<div class="block">
-					<div class="block-extended" data-link="<?php the_permalink(); ?>">
-						<img src="<?php the_field('home_square_extended'); ?>" alt="<?php the_field('home_square_title'); ?>"/>
-						<div class="title-link">	
-							<a class="project-title-link" ><?php the_field('home_square_title'); ?></a>
-						<!-- 	<a class="project-title-hover"><?php the_field('home_square_hover'); ?> &rarr;</a> -->
-						</div>
-					</div>
-					<div class="block-thumb" style="background-image:url('<?php echo $theHomeSprite ?>'); background-color: transparent;"></div>
+					<div class="block-thumb" style="background-image:url('<?php echo $theHomeSprite ?>'); background-color: transparent;" data-link="<?php the_permalink(); ?>"></div>
 				</div>
 				
 			<?php endwhile; wp_reset_query(); ?>
@@ -59,7 +38,20 @@
 
 <script type="text/javascript">
 	$(function () {
-		homePageActions();
+	
+		$(".block").each(function(i) {
+			$(this).children('.block-extended').addClass('ext'+i);
+			$(this).children('.block-thumb').addClass('thumb'+i);
+			$(this).addClass('block'+i);
+		});
+
+		$(".block-thumb").click(function(e) {
+			e.preventDefault();
+			var myLink = $(this).attr('data-link');
+			window.open(myLink,'_self');	
+		});
+		
+		
 	});
 
 </script>
