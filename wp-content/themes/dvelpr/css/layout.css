@@ -1,7 +1,7 @@
 /***************************************
 
 	Client: dvelpr.com	
-	Date Started: 7/1/2012
+	Date Started: 4/15/2012
 	Author: Jason Wynne
 	
 	Colors ------------
@@ -347,9 +347,10 @@ input.btn-send:hover {
 }
 
 .holder-cat h3 {
-	color: #fff;
+	color: #404042;
 	font-size: 2.3em;
 	padding-bottom: 15px;
+	text-shadow: 1px 1px 8px #F5F5F5;
 }
 
 .single-holder {
@@ -497,6 +498,10 @@ input.btn-send:hover {
 		width: 550px;
 		height: 308px;
 	}
+	
+	.single-copy {
+    width: 400px;
+  }
   
 } /****************** end of 665 ***********************/
 
@@ -518,6 +523,11 @@ input.btn-send:hover {
 		width: 440px;
 		height: 247px;
 	}
+	
+	.single-copy {
+    width: 315px;
+  }
+  
   
 } /****************** end of 555 ***********************/
 
@@ -584,6 +594,14 @@ input.btn-send:hover {
 		min-width: 90%;
 
 	}
+	
+	.single-image {
+	  display: none;
+	}
+	
+	.single-copy h4 {
+   padding: 0 7px;
+  }
 	
   
 } /****************** end of 445 ***********************/

@@ -12,7 +12,7 @@ $thisPost = get_post_type( $post->ID );
 	<div class="holder-me">
 		<div class="me-left">
 			<h1>Jason J Wynne</h1>
-			<h5>Web Developer / Designer<br />Minneapolis, MN</h5>
+			<h5>Developer / UXUI / Designer<br />Minneapolis, MN</h5>
 		</div>
 		<?php  wp_nav_menu( array( 'menu' => 'main_menu' ) );?>
 		

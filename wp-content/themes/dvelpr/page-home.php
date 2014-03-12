@@ -12,7 +12,7 @@
 	<div class="holder-me">
 		<div class="me-left">
 			<h1>Jason J Wynne</h1>
-			<h5>Web Developer / Designer<br />Minneapolis, MN</h5>
+			<h5>Developer / UXUI / Designer<br />Minneapolis, MN</h5>
 		</div>
 			<?php wp_nav_menu( array( 'menu' => 'main_menu' ) );?>
 				
@@ -20,7 +20,7 @@
 	</div>	
 	<div class="holder-blocks clearfix">
  			<?php
-				$custom_query = new WP_Query( array('post_type' => 'post','showposts' => -1 ) );
+				$custom_query = new WP_Query( array('post_type' => 'post','showposts' => 24) );
 				while($custom_query->have_posts()) : $custom_query->the_post();
 				$theHomeSprite = get_field('home_square_sprite');
 			?>
